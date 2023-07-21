@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <th:block th:fragment="main_list">
+    <table class="main">
+      <tr>
+        <th>제목</th>
+        <th>작가</th>
+        <th>comp</th>
+        <th>연도</th>
+        <th>구입값</th>
+        <th>판매값</th>
+      </tr>
+      <tr th:each="DTO,i : ${CAR_LIST}">
+        <td th:text="${i.count}">NO</td>
+        <td th:text="${DTO.c_qty}">구분</td>
+        <td th:text="${DTO.c_carnum}">차량번호</td>
+        <td th:text="${DTO.c_username}">사용자</td>
+        <td th:text="${DTO.c_sdate}">출발일자</td>
+        <td th:text="${DTO.c_stime}">출발시간</td>
+        <td th:text="${DTO.c_skm}">출발 KM</td>
+      </tr>
+    </table>
+  </th:block>
+</html>
